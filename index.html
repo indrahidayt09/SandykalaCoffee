@@ -1,158 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kopiKenanganSenja</title>
+    <meta name="description" content="Sandykala Coffee - Nikmati senja dengan sejuta cerita dan kopi berkualitas">
+    <meta name="keywords" content="kopi, coffee shop, sandykala, cafe, espresso, robusta">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Sandykala Coffee - Tempat Nongkrong Asik di Senja Hari</title>
+
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Alpine JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
 <body>
 
-    <!---navbarStart-->
-    <nav class="navbar">
-        <a href="#" class="navbar-logo">kenangan <span>senja</span>.</a>
+    <header class="header" x-data>
+        <nav class="navbar" x-data>
+            <a href="/" class="navbar__logo" aria-label="Sandykala Coffee Home">Sandykala <span>Coffee</span></a>
 
-        <div class="navbar-nav">
-            <a href="#home">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#mennu">Menu</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <div class="navbar-extra">
-            <a href="#" id="search"><i data-feather="search"></i></a>
-            <a href="#" id="shoppingCart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" id="menu"><i data-feather="menu"></i></a>
-        </div>
-    </nav>
-    <!---navbarEnd-->
-
-    <!-- heroSectionStart -->
-     <section class="hero" id="home">
-        <main class="content">
-            <h1>Mari Nikmati Secangkir <span>Kopi</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, enim!<p>
-            <a href="#" class="cta">Beli Sekarang</a>
-        </main>
-     </section>
-    <!-- heroSectionEnd -->
-
-    <!-- aboutSectionStart -->
-     <section id="about" class="about">
-        <h2>Tengang <span>Kami</span></h2>
-
-        <div class="row">
-            <div class="about-img">
-                <img src="img/about.jpg" alt="">
+            <div class="navbar__center">
+                <a href="#home" class="nav__link">Home</a>
+                <a href="#about" class="nav__link">Tentang Kami</a>
+                <a href="#menu" class="nav__link">Menu</a>
+                <a href="#products" class="nav__link">Produk</a>
+                <a href="#contact" class="nav__link">Contact</a>
             </div>
 
-            <div class="content">
-                <h3>Kenapa memilih kopi kami ?</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil dolore ab suscipit facere eligendi accusamus.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, eligendi.</p>
+            <div class="navbar__actions">
+                <button id="search-button" class="action-btn" aria-label="Search">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+                <button id="shopping-cart-btn" class="action-btn" aria-label="Shopping Cart">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span class="cart-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+                </button>
+                <button id="hamburger-menu" class="action-btn" aria-label="Menu" aria-expanded="false">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
             </div>
-        </div>
 
-     </section>
-    <!-- aboutSectionEnd -->
-
-     <!-- menuSectionStart -->
-     <section id="mennu" class="mennu">
-        <h2>Menu <span>Kami</span></h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, rerum voluptatum? Odit ex expedita eos error, officiis exercitationem quis dignissimos!</p>
-
-        <div class="row">
-            <div class="menu-card">
-                <img src="img/menu/1.png" alt="Espresso">
-                <h3 class="title">- Espresso -</h3>
-                <p class="price">IDR 15K</p>
+            <!-- Search Form -->
+            <div class="search-form">
+                <form role="search">
+                    <input type="search" class="search-input" placeholder="Search..." aria-label="Search products">
+                    <button type="submit" class="search-button" aria-label="Submit search">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                </form>
             </div>
-            <div class="menu-card">
-                <img src="img/menu/1.png" alt="Espresso">
-                <h3 class="title">- Espresso -</h3>
-                <p class="price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.png" alt="Espresso">
-                <h3 class="title">- Espresso -</h3>
-                <p class="price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.png" alt="Espresso">
-                <h3 class="title">- Espresso -</h3>
-                <p class="price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.png" alt="Espresso">
-                <h3 class="title">- Espresso -</h3>
-                <p class="price">IDR 15K</p>
-            </div>
-        </div>
-     </section>
-     <!-- menuSectionEnd -->
+        </nav>
 
-     <!-- contactSectionStart -->
-      <section id="contact" class="contact">
-        <h2>Kontak <span>Kami</span></h2>
-        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, saepe.</p>
+        <!-- Shopping Cart Sidebar -->
+        <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button id="close-cart" aria-label="Close cart">&times;</button>
+            </div>
 
-        <div class="row">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506412.334968065!2d107.8437812407131!3d-7.426867703530044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65f8c1851732c5%3A0x301e8f1fc28b900!2sKabupaten%20Tasikmalaya%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1739459613129!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+            <div class="cart-items">
+                <template x-for="(item, index) in $store.cart.items" x-keys="index">
+                    <article class="cart-item">
+                        <img :src="`assets/${item.img}`" :alt="item.name" width="50" height="50" loading="lazy">
+                        <div class="item-details">
+                            <h3 x-text="item.name"></h3>
+                            <p x-text="idr(item.price)"></p>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" @click="$store.cart.remove(item.id)"
+                                    aria-label="Reduce quantity">&minus;</button>
+                                <span class="quantity" x-text="item.quantity"></span>
+                                <button class="quantity-btn plus" @click="$store.cart.add(item)"
+                                    aria-label="Increase quantity">&plus;</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" aria-label="Remove item">&times;</button>
+                    </article>
+                </template>
 
-            <form action="">
-                <div class="input-group">
-                    <i data-feather="user"></i>
-                    <input type="text" placeholder="Nama Lengkap">
+                <p x-show="!$store.cart.items.length" class="empty-cart-message">Keranjang belanja kosong</p>
+            </div>
+
+            <footer class="cart-footer" x-show="$store.cart.items.length > 0">
+                <h3>Total: <span x-text="idr($store.cart.total)"></span></h3>
+                <button class="checkout-btn">Checkout</button>
+            </footer>
+        </aside>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__content">
+                <p class="hero__tagline">CAFFEE</p>
+                <h1 class="hero__title">Nikmati Senja Dengan <span>Sejuta Cerita</span></h1>
+                <p class="hero__description">
+                    I'm a paragraph. Click here to add your own text and edit me.
+                    I'm a great place for you to tell a story and make an impression.
+                </p>
+
+                <div class="hero__cta">
+                    <a href="#" aria-label="Contact via WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    <a href="#" aria-label="Contact via Email"><ion-icon name="mail-outline"></ion-icon></a>
                 </div>
-                <div class="input-group">
-                    <i data-feather="mail"></i>
-                    <input type="text" placeholder="Email Aktif">
-                </div>
-                <div class="input-group">
-                    <i data-feather="phone"></i>
-                    <input type="text" placeholder="No Handphone">
-                </div>
-                <button type="submit" class="btn">Kirim Pesan</button>
-            </form>
+
+            </div>
+
+            <figure class="hero__image">
+                <img src="assets/img1.png" alt="Secangkir kopi Sandykala" width="600" height="400" loading="eager">
+            </figure>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <figure class="about__images">
+                <img src="assets/img1.png" alt="Interior Sandykala Coffee" class="about__image--top" width="300"
+                    height="200" loading="lazy">
+                <img src="assets/img1.png" alt="Minuman kopi Sandykala" class="about__image--bottom" width="350"
+                    height="250" loading="lazy">
+            </figure>
+
+            <article class="about__content">
+                <h2 class="section__subtitle">ABOUT US</h2>
+                <h3 class="section__title">ABOUT CAFEE</h3>
+                <p>I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell a
+                    story and add more about you.</p>
+                <p>I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell a
+                    story and let your users know a little more about you.</p>
+                <a href="#" class="btn">ABOUT US</a>
+            </article>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products" id="products" x-data="products">
+            <h2 class="section__title">Produk Kami</h2>
+
+            <div class="products__grid">
+                <template x-for="(item, index) in items" x-keys="index">
+                    <article class="product-card">
+                        <figure class="product__image">
+                            <img :src="`assets/${item.img}`" :alt="item.name" width="400" height="300" loading="lazy">
+                            <button class="add-to-cart" @click.prevent="$store.cart.add(item)" aria-label="Add to cart">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </button>
+                        </figure>
+
+                        <div class="product__info">
+                            <h3 x-text="item.name"></h3>
+                            <p class="product__desc">Lorem ipsum dolor sit, amet consectetur.</p>
+                            <p class="product__price" x-text="idr(item.price)"></p>
+
+                            <footer class="product__actions">
+                                <div class="action__icons">
+                                    <button class="icon-btn" aria-label="Add to favorites"><ion-icon
+                                            name="heart-outline"></ion-icon></button>
+                                    <button class="icon-btn" aria-label="Save for later"><ion-icon
+                                            name="bookmark-outline"></ion-icon></button>
+                                </div>
+                                <button class="checkout-btn2">Checkout</button>
+                            </footer>
+                        </div>
+                    </article>
+                </template>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact__container">
+                <article class="contact__form">
+                    <h2 class="section__title">Hubungi Kami</h2>
+                    <form>
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda..."
+                            required></textarea>
+
+                        <button type="submit" class="submit-btn">Kirim</button>
+                    </form>
+                </article>
+
+                <figure class="contact__map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506412.334968065!2d107.8437812407131!3d-7.426867703530044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65f8c1851732c5%3A0x301e8f1fc28b900!2sKabupaten%20Tasikmalaya%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1739459613129!5m2!1sid!2sid"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Sandykala Coffee di Tasikmalaya">
+                    </iframe>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <h2 class="footer__logo">SANDYKALA COFFEE</h2>
+                <p class="footer__slogan">Nikmati Senja Dengan Sejuta Cerita</p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <a href="#home" class="footer__link">Home</a>
+                <a href="#menu" class="footer__link">Menu</a>
+                <a href="#about" class="footer__link">About</a>
+                <a href="#contact" class="footer__link">Contact</a>
+            </nav>
+
+            <div class="footer__social">
+                <a href="#" class="social__link" aria-label="Facebook"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" class="social__link" aria-label="Instagram"><ion-icon name="logo-tiktok"></ion-icon></a>
+                <a href="#" class="social__link" aria-label="Twitter"><ion-icon name="logo-facebook"></ion-icon></a>
+            </div>
         </div>
-      </section>
-     <!-- contactSectionEnd -->
 
-     <!-- footerStart -->
-      <footer>
-        <div class="socials">
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="facebook"></i></a>
-            <a href="#"><i data-feather="twitter"></i></a>
-        </div>
+        <p class="footer__copyright">&copy; <span id="year"></span> Sandykala Coffee. All rights reserved.</p>
+    </footer>
 
-        <div class="links">
-            <a href="#">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#menu">Menu</a>
-            <a href="#contact">Kontak</a>
-        </div>
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <div class="credit">
-            <p>Created by <a href="#">Indra Hidayat</a>. | &copy; 2025</p>
-        </div>
-      </footer>
-     <!-- footerEnd -->
+    <!-- Main JS -->
+    <script src="main.js"></script>
 
-
-    <!--java scrip start-->
+    <!-- Year Update -->
     <script>
-        feather.replace();
-      </script>
-
-      <script src="javasript/main.js"></script>
-    <!--java scrip end-->
-    
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
