@@ -9,10 +9,6 @@
 
     <title>Sandykala Coffee - Tempat Nongkrong Asik di Senja Hari</title>
 
-    <!-- Preload Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap">
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -28,7 +24,7 @@
 
     <header class="header" x-data>
         <nav class="navbar" x-data>
-            <a href="/" class="navbar__logo" aria-label="Sandykala Coffee Home">Sandykala <span>Coffee</span></a>
+            <a href="#" class="navbar__logo" aria-label="Sandykala Coffee Home">Sandykala Coffee</a>
 
             <div class="navbar__center">
                 <a href="#home" class="nav__link">Home</a>
@@ -66,7 +62,7 @@
         <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
             <div class="cart-header">
                 <h2>Shopping Cart</h2>
-                <button id="close-cart" aria-label="Close cart">&times;</button>
+                <button id="close-cart" aria-label="Close cart"><ion-icon name="chevron-forward-outline"></ion-icon></button>
             </div>
 
             <div class="cart-items">
@@ -84,7 +80,7 @@
                                     aria-label="Increase quantity">&plus;</button>
                             </div>
                         </div>
-                        <button class="remove-item" aria-label="Remove item">&times;</button>
+                        <button class="remove-item" aria-label="Remove item"><ion-icon name="close-circle-outline"></ion-icon></button>
                     </article>
                 </template>
 
@@ -102,44 +98,40 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero__content">
-                <p class="hero__tagline">CAFFEE</p>
-                <h1 class="hero__title">Nikmati Senja Dengan <span>Sejuta Cerita</span></h1>
+                <h1 class="hero__title">Nikmati Senja <br>Dengan Sejuta Cerita</h1>
                 <p class="hero__description">
-                    I'm a paragraph. Click here to add your own text and edit me.
-                    I'm a great place for you to tell a story and make an impression.
+                    Tempat nongkrong nyaman dengan sajian kopi lokal berkualitas. Cocok buat ngobrol, kerja, atau sekadar melepas penat.
                 </p>
 
                 <div class="hero__cta">
-                    <a href="#" aria-label="Contact via WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
-                    <a href="#" aria-label="Contact via Email"><ion-icon name="mail-outline"></ion-icon></a>
+                    <a href="">Nikmati Sekarang</a>
                 </div>
 
             </div>
-
-            <figure class="hero__image">
-                <img src="assets/img1.png" alt="Secangkir kopi Sandykala" width="600" height="400" loading="eager">
-            </figure>
-
         </section>
 
         <!-- About Section -->
         <section class="about" id="about">
-            <figure class="about__images">
-                <img src="assets/img1.png" alt="Interior Sandykala Coffee" class="about__image--top" width="300"
-                    height="200" loading="lazy">
-                <img src="assets/img1.png" alt="Minuman kopi Sandykala" class="about__image--bottom" width="350"
-                    height="250" loading="lazy">
-            </figure>
-
-            <article class="about__content">
-                <h2 class="section__subtitle">ABOUT US</h2>
-                <h3 class="section__title">ABOUT CAFEE</h3>
-                <p>I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell a
-                    story and add more about you.</p>
-                <p>I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell a
-                    story and let your users know a little more about you.</p>
-                <a href="#" class="btn">ABOUT US</a>
-            </article>
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <img src="assets/hero.png" alt="Kopi Sandykala" class="about-img">
+                    </div>
+                    
+                    <div class="about-content">
+                        <h3 class="subtitle">Kenapa memilih kami?</h3>
+                        
+                        <div class="description">
+                            <p>Semua berawal dari obrolan santai di teras rumah—dilringi kopi hitam dan mimpi besar. Kami sadar, kopi bukan cuma minuman. Dia jadi saksi cerita, jadi perekat obrolan, dan kadang... jadi pelarian dari penat.</p>
+                            <p>Dari situ, lahirlah ide sederhana: bikin tempat ngopi yang nyaman, ramah, dan punya rasa yang jujur.</p>
+                        </div>
+                        
+                        <a href="#" class="read-more">Selengkapnya...</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Products Section -->
@@ -208,27 +200,53 @@
     </main>
 
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__brand">
-                <h2 class="footer__logo">SANDYKALA COFFEE</h2>
-                <p class="footer__slogan">Nikmati Senja Dengan Sejuta Cerita</p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo">Sandykala Coffee</h3>
+                <p class="footer-slogan">Kopi jujur, obrolan asik, suasana nyaman</p>
             </div>
-
-            <nav class="footer__nav" aria-label="Footer navigation">
-                <a href="#home" class="footer__link">Home</a>
-                <a href="#menu" class="footer__link">Menu</a>
-                <a href="#about" class="footer__link">About</a>
-                <a href="#contact" class="footer__link">Contact</a>
-            </nav>
-
-            <div class="footer__social">
-                <a href="#" class="social__link" aria-label="Facebook"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="#" class="social__link" aria-label="Instagram"><ion-icon name="logo-tiktok"></ion-icon></a>
-                <a href="#" class="social__link" aria-label="Twitter"><ion-icon name="logo-facebook"></ion-icon></a>
+    
+            <div class="footer-links">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul>
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#menu" class="footer-link">Our Menu</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Jl. Kopi Tenang No. 123, Bandung</li>
+                    <li><i class="fas fa-phone"></i> +62 812 3456 7890</li>
+                    <li><i class="fas fa-envelope"></i> hello@sandykala.coffee</li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h4 class="footer-title">Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="social-link"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="#" class="social-link"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                </div>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
             </div>
         </div>
-
-        <p class="footer__copyright">&copy; <span id="year"></span> Sandykala Coffee. All rights reserved.</p>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2023 Sandykala Coffee. All Rights Reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
     </footer>
 
     <!-- Icons -->

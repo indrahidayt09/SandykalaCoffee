@@ -1,0 +1,132 @@
+/* Media Querys */
+@media (max-width: 992px) {
+    .hero {
+        
+        padding-top: 12rem;
+    }
+
+    .hero__content {
+        max-width: 100%;
+        margin-bottom: 5rem;
+    }
+
+    .hero__image {
+        justify-content: center;
+    }
+
+    /* about */
+    .about-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .about-image, .about-content {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 56.25%;
+    }
+
+    .navbar__center {
+        position: fixed;
+        padding: 2.4rem;
+        top: 7.2rem;
+        right: -100%;
+        width: 80%;
+        min-height: 100vh;
+        background: var(--text);
+        justify-content: center;
+        transition: var(--transition);
+        z-index: 998;
+        border-radius: 5px;
+    }
+
+    .navbar__center.active {
+        right: 2px;
+    }
+
+    .nav__link {
+        display: block;
+        padding: 1.4rem;
+        margin: .4rem 0;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--primary);
+    }
+
+    .nav__link::after {
+        transform-origin: right;
+        border-bottom: 0.1rem solid var(--primary);
+    }
+
+    .nav__link::after:hover {
+        transform: scaleX(02);
+        
+    }
+
+    #hamburger-menu {
+        font-size: 3.4rem;
+        display: block;
+    }
+
+    .search-form {
+        width: 90%;
+        right: 5%;
+    }
+
+    /* about */
+    .about-us {
+        padding: 6rem 5%;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .description p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero__title {
+        font-size: 3.6rem;
+    }
+
+    .section__title {
+        font-size: 3rem;
+    }
+
+    .products__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__container {
+        grid-template-columns: 1fr;
+    }
+
+    /* about */
+    .about-us {
+        padding: 5rem 3%;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 2.6rem;
+    }
+    
+    .read-more {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+}
+
